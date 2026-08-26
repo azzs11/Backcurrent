@@ -88,6 +88,11 @@ class PaymentAttempt(Base):
     failure_code   = Column(String, nullable=False)
     decline_reason = Column(String, nullable=True)   # filled in by diagnoser
 
+    # JSON-serialized bank webhook payload — diagnoser reads this to resolve ambiguous
+    # failure codes. Real Razorpay responses are a single nested JSON object; storing
+    # them as typed columns would be a schema that doesn't exist in production.
+    raw_metadata   = Column(Text, nullable=True)
+
     # how many times this customer has already been attempted (across all payments,
     # not just this one — that's tracked in ComplianceState, mirrored here for
     # quick access without a join)

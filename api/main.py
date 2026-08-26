@@ -1,8 +1,3 @@
-"""
-FastAPI app entry point. Minimal setup — create the app, run db init on startup,
-register routes. If this file starts growing, something's in the wrong place.
-"""
-
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
