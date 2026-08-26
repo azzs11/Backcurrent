@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+# tells pytest where to find tests and where to resolve imports from
+testpaths = ["tests"]
+pythonpath = ["."]            # lets us do "import agent.diagnoser" without installing the package
+asyncio_mode = "auto"         # automatically handles async test functions if we add them

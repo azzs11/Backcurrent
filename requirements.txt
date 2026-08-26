@@ -1,0 +1,30 @@
+# Core API framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.34.0     # uvicorn[standard] pulls in websockets + httptools for speed
+
+# Database
+sqlalchemy>=2.0.0             # v2 has a cleaner session API than v1
+
+# Data processing
+pandas>=2.2.0
+
+# AI + Payments
+anthropic>=0.40.0             # Claude API — only used in decider.py for judgment calls
+razorpay>=1.4.2               # official SDK, test-mode works without real credentials
+
+# Dashboard
+streamlit>=1.40.0
+
+# Config + env
+python-dotenv>=1.0.0
+
+# Synthetic data generation
+faker>=33.0.0                 # realistic names, emails, phone numbers for the batch
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.24.0        # in case we add async fixtures later
+httpx>=0.27.0                 # FastAPI's TestClient depends on this
+
+# Pydantic — FastAPI 0.100+ requires v2, pinning explicitly so there's no ambiguity
+pydantic>=2.0.0
