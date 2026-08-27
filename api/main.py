@@ -1,9 +1,12 @@
 from contextlib import asynccontextmanager
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 
 from api.routes import router
 from db.session import init_db
+
+load_dotenv()
 
 
 @asynccontextmanager
